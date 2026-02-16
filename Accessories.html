@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="accessories.css">
+    <link rel="shortcut icon" href="image/favicon.ico.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Accessories | Knot & Loop</title>
+</head>
+<body>
+    <header class="header">
+        <nav id="navbar" class="container_nav">
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <div class="knot">
+                <div class="logo">
+                    <img src="image/favicon.ico.png" alt="">
+                    <a class="navbar-brand" href="KNOTandLOOP.html" id="logo">KNOT & LOOP</a>
+                </div>
+            </div>
+            
+            <ul class="navbarcont">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="hairextentions.html">HAIR EXTENSIONS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="Accessories.html">ACCESSORIES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Tutorial.html">TUTORIALS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">ABOUT US</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">CONTACT US</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="accessories-hero">
+        <img src="image/freepik__ultra-realistic-wide-horizontal-flat-lay-photo-of-__55818.png" class="accessories-img" alt="Hair Accessories">
+        <div class="hero-content">
+            <h1>Hair Accessories & Care</h1>
+            <p>Everything you need to maintain, style, and protect your wigs.</p>
+            <a href="#products" class="hero-btn">Shop Essentials</a>
+        </div>
+    </section>
+
+    <!-- PRODUCTS GRID -->
+    <section class="products-section" id="products">
+        <h2>Shop Accessories</h2>
+
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="images/mousse.jpg" alt="Hair Mousse">
+                <div class="product-info">
+                    <h3>Hair Mousse</h3>
+                    <p class="product-description">Defines curls and reduces frizz.</p>
+                    <p class="product-price">₦3,500</p>
+                </div>
+                <button onclick="addToCart({
+                    id: 101,
+                    name: 'Hair Mousse',
+                    price: 3500,
+                    image: 'images/mousse.jpg'
+                })">Add to Cart</button>
+                <a href="cart.html" class="view-cart-link">View Cart 🛒</a>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="images/leave-in.jpg" alt="Leave-In Conditioner">
+                <div class="product-info">
+                    <h3>Leave-In Conditioner</h3>
+                    <p class="product-description">Daily moisture and softness.</p>
+                    <p class="product-price">₦4,000</p>
+                </div>
+                <button onclick="addToCart({
+                    id: 102,
+                    name: 'Leave-In Conditioner',
+                    price: 4000,
+                    image: 'images/leave-in.jpg'
+                })">Add to Cart</button>
+                <a href="cart.html" class="view-cart-link">View Cart 🛒</a>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="images/spray.jpg" alt="Leave-In Spray">
+                <div class="product-info">
+                    <h3>Leave-In Spray</h3>
+                    <p class="product-description">Quick refresh for wigs.</p>
+                    <p class="product-price">₦3,200</p>
+                </div>
+                <button onclick="addToCart({
+                    id: 103,
+                    name: 'Leave-In Spray',
+                    price: 3200,
+                    image: 'images/spray.jpg'
+                })">Add to Cart</button>
+                <a href="cart.html" class="view-cart-link">View Cart 🛒</a>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="images/serum.jpg" alt="Shine Serum">
+                <div class="product-info">
+                    <h3>Shine Serum</h3>
+                    <p class="product-description">Glossy finish and smooth feel.</p>
+                    <p class="product-price">₦4,500</p>
+                </div>
+                <button onclick="addToCart({
+                    id: 104,
+                    name: 'Shine Serum',
+                    price: 4500,
+                    image: 'images/serum.jpg'
+                })">Add to Cart</button>
+                <a href="cart.html" class="view-cart-link">View Cart 🛒</a>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img src="images/edge-brush.jpg" alt="Edge Brush">
+                <div class="product-info">
+                    <h3>Edge Brush & Mini Comb</h3>
+                    <p class="product-description">Perfect edges and neat parting.</p>
+                    <p class="product-price">₦2,500</p>
+                </div>
+                <button onclick="addToCart({
+                    id: 105,
+                    name: 'Edge Brush & Mini Comb',
+                    price: 2500,
+                    image: 'images/edge-brush.jpg'
+                })">Add to Cart</button>
+                <a href="cart.html" class="view-cart-link">View Cart 🛒</a>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <img src="images/rollers.jpg" alt="Curl Rollers">
+                <div class="product-info">
+                    <h3>Curl Soft Rollers</h3>
+                    <p class="product-description">Heat-free curl revival.</p>
+                    <p class="product-price">₦3,800</p>
+                </div>
+                <button onclick="addToCart({
+                    id: 106,
+                    name: 'Curl Soft Rollers',
+                    price: 3800,
+                    image: 'images/rollers.jpg'
+                })">Add to Cart</button>
+                <a href="cart.html" class="view-cart-link">View Cart 🛒</a>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-card">
+                <img src="images/scarf.jpg" alt="Silk Scarf">
+                <div class="product-info">
+                    <h3>Signature Silk Scarf</h3>
+                    <p class="product-description">Protects edges and styles.</p>
+                    <p class="product-price">₦5,000</p>
+                </div>
+                <button onclick="addToCart({
+                    id: 107,
+                    name: 'Signature Silk Scarf',
+                    price: 5000,
+                    image: 'images/scarf.jpg'
+                })">Add to Cart</button>
+                <a href="cart.html" class="view-cart-link">View Cart 🛒</a>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-card">
+                <img src="images/satin-bag.jpg" alt="Satin Bag">
+                <div class="product-info">
+                    <h3>Satin Storage Bag</h3>
+                    <p class="product-description">Safe wig storage & travel.</p>
+                    <p class="product-price">₦6,000</p>
+                </div>
+                <button onclick="addToCart({
+                    id: 108,
+                    name: 'Satin Storage Bag',
+                    price: 6000,
+                    image: 'images/satin-bag.jpg'
+                })">Add to Cart</button>
+                <a href="cart.html" class="view-cart-link">View Cart 🛒</a>
+            </div>
+
+            <!-- Product 9 -->
+            <div class="product-card">
+                <img src="images/clips.jpg" alt="Hair Clips">
+                <div class="product-info">
+                    <h3>Hair Clips</h3>
+                    <p class="product-description">Easy sectioning while styling.</p>
+                    <p class="product-price">₦1,800</p>
+                </div>
+                <button onclick="addToCart({
+                    id: 109,
+                    name: 'Hair Clips',
+                    price: 1800,
+                    image: 'images/clips.jpg'
+                })">Add to Cart</button>
+                <a href="cart.html" class="view-cart-link">View Cart 🛒</a>
+            </div>
+
+            <!-- Product 10 -->
+            <div class="product-card">
+                <img src="images/claw.jpg" alt="Claw Clip">
+                <div class="product-info">
+                    <h3>Claw Clips</h3>
+                    <p class="product-description">Effortless everyday styling.</p>
+                    <p class="product-price">₦2,200</p>
+                </div>
+                <button onclick="addToCart({
+                    id: 110,
+                    name: 'Claw Clips',
+                    price: 2200,
+                    image: 'images/claw.jpg'
+                })">Add to Cart</button>
+                <a href="cart.html" class="view-cart-link">View Cart 🛒</a>
+            </div>
+
+            <!-- Product 11 -->
+            <div class="product-card">
+                <img src="images/headband.jpg" alt="Headband">
+                <div class="product-info">
+                    <h3>Headbands</h3>
+                    <p class="product-description">Style meets function.</p>
+                    <p class="product-price">₦2,800</p>
+                </div>
+                <button onclick="addToCart({
+                    id: 111,
+                    name: 'Headbands',
+                    price: 2800,
+                    image: 'images/headband.jpg'
+                })">Add to Cart</button>
+                <a href="cart.html" class="view-cart-link">View Cart 🛒</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- KITS SECTION -->
+    <section class="kits-section">
+        <h2>Care Kits</h2>
+
+        <div class="kits-grid">
+            <div class="kit-card">
+                <h3>Essential Care Kit</h3>
+                <ul>
+                    <li>Hair Mousse</li>
+                    <li>Leave-In Conditioner</li>
+                    <li>Edge Brush & Mini Comb</li>
+                    <li>Silk Scarf</li>
+                </ul>
+                <p class="kit-price">₦14,000 <span class="original-price">₦15,000</span></p>
+                <button onclick="addToCart({
+                    id: 201,
+                    name: 'Essential Care Kit',
+                    price: 14000,
+                    image: 'images/kit1.jpg'
+                })">Add to Cart</button>
+                <a href="cart.html" class="view-cart-link">View Cart 🛒</a>
+            </div>
+
+            <div class="kit-card">
+                <h3>Ultimate Maintenance Kit</h3>
+                <ul>
+                    <li>Hair Mousse</li>
+                    <li>Leave-In Spray</li>
+                    <li>Shine Serum</li>
+                    <li>Curl Soft Rollers</li>
+                    <li>Edge Brush & Mini Comb</li>
+                    <li>Silk Scarf</li>
+                    <li>Satin Storage Bag</li>
+                </ul>
+                <p class="kit-price">₦28,000 <span class="original-price">₦32,000</span></p>
+                <button onclick="addToCart({
+                    id: 202,
+                    name: 'Ultimate Maintenance Kit',
+                    price: 28000,
+                    image: 'images/kit2.jpg'
+                })">Add to Cart</button>
+                <a href="cart.html" class="view-cart-link">View Cart 🛒</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- About -->
+            <div class="footer-column about">
+                <h3>Knot & Loop</h3>
+                <p>Crafting premium, easy-to-style hair extensions and accessories for effortless elegance every day.</p>
+            </div>
+
+            <!-- Shop Links -->
+            <div class="footer-column shop">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="hairextentions.html">Braided Ponytails</a></li>
+                    <li><a href="hairextentions.html">Boho Ponytails</a></li>
+                    <li><a href="hairextentions.html">French Curls</a></li>
+                    <li><a href="hairextentions.html">Bangs Clip-ins</a></li>
+                    <li><a href="hairextentions.html">Wigs & Accessories</a></li>
+                </ul>
+            </div>
+
+            <!-- Tutorials & Guides -->
+            <div class="footer-column tutorials">
+                <h4>Tutorials & Guides</h4>
+                <ul>
+                    <li><a href="Tutorial.html">Style Tutorials</a></li>
+                    <li><a href="Accessories.html">Hair Care Tips</a></li>
+                    <li><a href="contact.html">FAQs</a></li>
+                </ul>
+            </div>
+
+            <!-- Connect / Newsletter -->
+            <div class="footer-column connect">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/knotandloop_ng?igsh=Nzlpenc2NWdzMWF1"><img src="icons/instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.tiktok.com/@knot_and_loop?_r=1&_t=ZS-93rNi85U0sU"><img src="icons/tiktok.svg" alt="TikTok"></a>
+                    <a href="https://www.instagram.com/yourpage"><img src="icons/youtube.svg" alt="YouTube"></a>
+                    <a href="https://pin.it/6Iu2ugBSF"><img src="icons/pinterest.svg" alt="Pinterest"></a>
+                </div>
+                <form class="newsletter" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <label for="email">Stay updated on new products & tutorials</label>
+                    <div class="newsletter-input">
+                        <input type="email" name="email" id="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Bottom row -->
+        <div class="footer-bottom">
+            <p>© 2026 Knot & Loop. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-and-conditions.html">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS - MUST BE AT THE BOTTOM -->
+    <script src="cart.js"></script>
+    <script>
+        // Hamburger Menu Toggle
+        console.log('Script loaded');
+
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.querySelector('.navbarcont');
+
+        console.log('Hamburger element:', hamburger);
+        console.log('Nav menu element:', navMenu);
+
+        // Create overlay element
+        const overlay = document.createElement('div');
+        overlay.classList.add('menu-overlay');
+        document.body.appendChild(overlay);
+
+        // Toggle menu on hamburger click
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('Hamburger clicked!');
+                
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                overlay.classList.toggle('active');
+                
+                console.log('Nav menu classes:', navMenu.classList);
+                
+                // Prevent body scroll when menu is open
+                document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+            });
+        } else {
+            console.error('Hamburger or navMenu not found!');
+            if (!hamburger) console.error('Hamburger button not found');
+            if (!navMenu) console.error('Navigation menu not found');
+        }
+
+        // Close menu when clicking overlay
+        overlay.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close menu when clicking a nav link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Close menu on window resize to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 1200) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
+</html>

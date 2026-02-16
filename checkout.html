@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout | Knot & Loop</title>
+<link rel="shortcut icon" href="image/favicon.ico.png" type="image/x-icon">
+<link rel="stylesheet" href="checkout.css">
+<link rel="stylesheet" href="global-styles.css">
+<link rel="stylesheet" href="your-page-specific.css">
+<link rel="stylesheet" href="cssfiles/bootstrap.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+ <header class="header">
+        <nav id="navbar" class="container_nav">
+                <div class="knot">
+                    <div class="logo" id="">
+                        <img src="image/favicon.ico.png" alt="">
+                        <a class="navbar-brand" href="KNOTandLOOP.html" id="logo">KNOT & LOOP</a>
+                    </div>
+                </div>
+                <ul class="navbarcont">
+                        <li class="nav-item">
+                            <a class="nav-link" href="home.html">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="hairextentions.html">HAIR EXTENSIONS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="Accessories.html">ACCESSORIES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Tutorial.html">TUTORIALS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">ABOUT US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">CONTACT US</a>
+                        </li>
+                </ul>
+
+        </nav>
+    </header>
+<header><h1>Checkout<h1></header>
+<section class="checkout-container">
+
+    <div class="checkout-form">
+    <input type="text" id="name" placeholder="Full Name">
+    <input type="tel" id="phone" placeholder="Phone Number">
+    
+    <h3>Delivery Option</h3>
+    <label><input type="radio" name="delivery" value="Delivery" checked> Home Delivery</label>
+    <label><input type="radio" name="delivery" value="Pickup"> Pickup</label>
+
+    <textarea id="address" placeholder="Delivery Address"></textarea>
+
+    <button onclick="placeOrder()">Place Order</button>
+    </div>
+
+    <div class="order-summary">
+    <h3>Order Summary</h3>
+    <div id="order-items"></div>
+    <p>Total: ₦<span id="order-total">0</span></p>
+    </div>
+    <a  class="back-btn"  href="cart.html" >← Return to Cart</a>
+</section>
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- About -->
+        <div class="footer-column about">
+        <h3>Knot & Loop</h3>
+        <p>Crafting premium, easy-to-style hair extensions and accessories for effortless elegance every day.</p>
+        </div>
+
+        <!-- Shop Links -->
+        <div class="footer-column shop">
+        <h4>Shop</h4>
+        <ul>
+            <li><a href="#">Braided Ponytails</a></li>
+            <li><a href="#">Boho Ponytails</a></li>
+            <li><a href="#">French Curls</a></li>
+            <li><a href="#">Bangs Clip-ins</a></li>
+            <li><a href="#">Wigs & Accessories</a></li>
+        </ul>
+        </div>
+
+        <!-- Tutorials & Guides -->
+        <div class="footer-column tutorials">
+        <h4>Tutorials & Guides</h4>
+        <ul>
+            <li><a href="#">Style Tutorials</a></li>
+            <li><a href="#">Hair Care Tips</a></li>
+            <li><a href="#">FAQs</a></li>
+        </ul>
+        </div>
+
+        <!-- Connect / Newsletter -->
+        <div class="footer-column connect">
+        <h4>Connect</h4>
+        <div class="social-icons">
+            <a href="#"><img src="icons/instagram.svg" alt="Instagram"></a>
+            <a href="#"><img src="icons/tiktok.svg" alt="TikTok"></a>
+            <a href="#"><img src="icons/youtube.svg" alt="YouTube"></a>
+            <a href="#"><img src="icons/pinterest.svg" alt="Pinterest"></a>
+        </div>
+        <form class="newsletter">
+            <label for="email">Stay updated on new products & tutorials</label>
+            <div class="newsletter-input">
+            <input type="email" id="email" placeholder="Your email address">
+            <button type="submit">Subscribe</button>
+            </div>
+        </form>
+        </div>
+
+    </div>
+
+    <!-- Bottom row -->
+    <div class="footer-bottom">
+        <p>© 2026 Knot & Loop. All Rights Reserved.</p>
+        <div class="footer-links">
+        <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
+        </div>
+    </div>
+</footer>
+
+<script src="checkout.js"></script>
+</body>
+</html>

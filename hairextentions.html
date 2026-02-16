@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hairextension.css">
+    <link rel="shortcut icon" href="image/favicon.ico.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Hair Extensions | Knot & Loop</title>
+</head>
+<body>
+    <header class="header">
+        <nav id="navbar" class="container_nav">
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <div class="knot">
+                <div class="logo">
+                    <img src="image/favicon.ico.png" alt="">
+                    <a class="navbar-brand" href="KNOTandLOOP.html" id="logo">KNOT & LOOP</a>
+                </div>
+            </div>
+            
+            <ul class="navbarcont">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="hairextentions.html">HAIR EXTENSIONS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Accessories.html">ACCESSORIES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Tutorial.html">TUTORIALS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">ABOUT US</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">CONTACT US</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="category-header">
+        <h1>Hair Extensions</h1>
+        <p>Luxury detachable ponytails designed for Black women</p>
+    </section>
+
+    <section class="filters">
+        <div class="filter-controls">
+            <select id="collection-filter" onchange="filterProducts()">
+                <option value="">All Collections</option>
+                <option value="silky">Silky Straight</option>
+                <option value="body">Body Wave</option>
+                <option value="curl">Deep Curl</option>
+            </select>
+            <select id="length-filter" onchange="filterProducts()">
+                <option value="">All Lengths</option>
+                <option value="14">14 inches</option>
+                <option value="18">18 inches</option>
+                <option value="22">22 inches</option>
+                <option value="26">26 inches</option>
+            </select>
+            <button class="reset-filters-btn" onclick="resetFilters()">Refresh</button>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="products-grid" id="extensions-grid">
+            <!-- Silky Straight 14" -->
+            <div class="product-card" data-collection="silky" data-length="14">
+                <img src="path/to/silky-straight-14.jpg" alt="Silky Straight Bundle 14 inches" class="product-image">
+                <h3 class="product-title">Silky Straight Bundle</h3>
+                <p class="product-description">14" - Sleek and sophisticated straight texture.</p>
+                <p class="product-price">₦45,000</p>
+                <div class="product-actions">
+                    <button class="add-to-cart-btn" onclick='addToCart({
+                        id: "ext-silky-14",
+                        name: "Silky Straight Bundle 14\"",
+                        price: 45000,
+                        image: "path/to/silky-straight-14.jpg"
+                    })'>Add to Cart</button>
+                    <a href="cart.html" class="view-cart-link">View Cart 🛒</a>
+                </div>
+            </div>
+
+            <!-- Silky Straight 18" -->
+            <div class="product-card" data-collection="silky" data-length="18">
+                <img src="path/to/silky-straight-18.jpg" alt="Silky Straight Bundle 18 inches" class="product-image">
+                <h3 class="product-title">Silky Straight Bundle</h3>
+                <p class="product-description">18" - Sleek and sophisticated straight texture.</p>
+                <p class="product-price">₦52,000</p>
+                <div class="product-actions">
+                    <button class="add-to-cart-btn" onclick='addToCart({
+                        id: "ext-silky-18",
+                        name: "Silky Straight Bundle 18\"",
+                        price: 52000,
+                        image: "path/to/silky-straight-18.jpg"
+                    })'>Add to Cart</button>
+                    <a href="cart.html" class="view-cart-link">View Cart 🛒</a>
+                </div>
+            </div>
+
+            <!-- Silky Straight 22" -->
+            <div class="product-card" data-collection="silky" data-length="22">
+                <img src="path/to/silky-straight-22.jpg" alt="Silky Straight Bundle 22 inches" class="product-image">
+                <h3 class="product-title">Silky Straight Bundle</h3>
+                <p class="product-description">22" - Sleek and sophisticated straight texture.</p>
+                <p class="product-price">₦58,000</p>
+                <div class="product-actions">
+                    <button class="add-to-cart-btn" onclick='addToCart({
+                        id: "ext-silky-22",
+                        name: "Silky Straight Bundle 22\"",
+                        price: 58000,
+                        image: "path/to/silky-straight-22.jpg"
+                    })'>Add to Cart</button>
+                    <a href="cart.html" class="view-cart-link">View Cart 🛒</a>
+                </div>
+            </div>
+
+            <!-- Body Wave 14" -->
+            <div class="product-card" data-collection="body" data-length="14">
+                <img src="path/to/body-wave-14.jpg" alt="Body Wave Bundle 14 inches" class="product-image">
+                <h3 class="product-title">Body Wave Bundle</h3>
+                <p class="product-description">14" - Natural flowing waves for volume.</p>
+                <p class="product-price">₦48,000</p>
+                <div class="product-actions">
+                    <button class="add-to-cart-btn" onclick='addToCart({
+                        id: "ext-body-14",
+                        name: "Body Wave Bundle 14\"",
+                        price: 48000,
+                        image: "path/to/body-wave-14.jpg"
+                    })'>Add to Cart</button>
+                    <a href="cart.html" class="view-cart-link">View Cart 🛒</a>
+                </div>
+            </div>
+
+            <!-- Body Wave 18" -->
+            <div class="product-card" data-collection="body" data-length="18">
+                <img src="path/to/body-wave-18.jpg" alt="Body Wave Bundle 18 inches" class="product-image">
+                <h3 class="product-title">Body Wave Bundle</h3>
+                <p class="product-description">18" - Natural flowing waves for volume.</p>
+                <p class="product-price">₦55,000</p>
+                <div class="product-actions">
+                    <button class="add-to-cart-btn" onclick='addToCart({
+                        id: "ext-body-18",
+                        name: "Body Wave Bundle 18\"",
+                        price: 55000,
+                        image: "path/to/body-wave-18.jpg"
+                    })'>Add to Cart</button>
+                    <a href="cart.html" class="view-cart-link">View Cart 🛒</a>
+                </div>
+            </div>
+
+            <!-- Body Wave 22" -->
+            <div class="product-card" data-collection="body" data-length="22">
+                <img src="path/to/body-wave-22.jpg" alt="Body Wave Bundle 22 inches" class="product-image">
+                <h3 class="product-title">Body Wave Bundle</h3>
+                <p class="product-description">22" - Natural flowing waves for volume.</p>
+                <p class="product-price">₦62,000</p>
+                <div class="product-actions">
+                    <button class="add-to-cart-btn" onclick='addToCart({
+                        id: "ext-body-22",
+                        name: "Body Wave Bundle 22\"",
+                        price: 62000,
+                        image: "path/to/body-wave-22.jpg"
+                    })'>Add to Cart</button>
+                    <a href="cart.html" class="view-cart-link">View Cart 🛒</a>
+                </div>
+            </div>
+
+            <!-- Deep Curl 14" -->
+            <div class="product-card" data-collection="curl" data-length="14">
+                <img src="path/to/deep-curl-14.jpg" alt="Deep Curl Bundle 14 inches" class="product-image">
+                <h3 class="product-title">Deep Curl Bundle</h3>
+                <p class="product-description">14" - Bouncy curls with lasting hold.</p>
+                <p class="product-price">₦50,000</p>
+                <div class="product-actions">
+                    <button class="add-to-cart-btn" onclick='addToCart({
+                        id: "ext-curl-14",
+                        name: "Deep Curl Bundle 14\"",
+                        price: 50000,
+                        image: "path/to/deep-curl-14.jpg"
+                    })'>Add to Cart</button>
+                    <a href="cart.html" class="view-cart-link">View Cart 🛒</a>
+                </div>
+            </div>
+
+            <!-- Deep Curl 18" -->
+            <div class="product-card" data-collection="curl" data-length="18">
+                <img src="path/to/deep-curl-18.jpg" alt="Deep Curl Bundle 18 inches" class="product-image">
+                <h3 class="product-title">Deep Curl Bundle</h3>
+                <p class="product-description">18" - Bouncy curls with lasting hold.</p>
+                <p class="product-price">₦57,000</p>
+                <div class="product-actions">
+                    <button class="add-to-cart-btn" onclick='addToCart({
+                        id: "ext-curl-18",
+                        name: "Deep Curl Bundle 18\"",
+                        price: 57000,
+                        image: "path/to/deep-curl-18.jpg"
+                    })'>Add to Cart</button>
+                    <a href="cart.html" class="view-cart-link">View Cart 🛒</a>
+                </div>
+            </div>
+
+            <!-- Deep Curl 22" -->
+            <div class="product-card" data-collection="curl" data-length="22">
+                <img src="path/to/deep-curl-22.jpg" alt="Deep Curl Bundle 22 inches" class="product-image">
+                <h3 class="product-title">Deep Curl Bundle</h3>
+                <p class="product-description">22" - Bouncy curls with lasting hold.</p>
+                <p class="product-price">₦65,000</p>
+                <div class="product-actions">
+                    <button class="add-to-cart-btn" onclick='addToCart({
+                        id: "ext-curl-22",
+                        name: "Deep Curl Bundle 22\"",
+                        price: 65000,
+                        image: "path/to/deep-curl-22.jpg"
+                    })'>Add to Cart</button>
+                    <a href="cart.html" class="view-cart-link">View Cart 🛒</a>
+                </div>
+            </div>
+
+            <!-- Deep Curl 26" -->
+            <div class="product-card" data-collection="curl" data-length="26">
+                <img src="path/to/deep-curl-26.jpg" alt="Deep Curl Bundle 26 inches" class="product-image">
+                <h3 class="product-title">Deep Curl Bundle</h3>
+                <p class="product-description">26" - Bouncy curls with lasting hold.</p>
+                <p class="product-price">₦72,000</p>
+                <div class="product-actions">
+                    <button class="add-to-cart-btn" onclick='addToCart({
+                        id: "ext-curl-26",
+                        name: "Deep Curl Bundle 26\"",
+                        price: 72000,
+                        image: "path/to/deep-curl-26.jpg"
+                    })'>Add to Cart</button>
+                    <a href="cart.html" class="view-cart-link">View Cart 🛒</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- No Results Message -->
+        <div id="no-results" style="display: none; text-align: center; padding: 40px; color: #666;">
+            <p style="font-size: 1.2rem;">No products match your filters. Try different options.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- About -->
+            <div class="footer-column about">
+                <h3>Knot & Loop</h3>
+                <p>Crafting premium, easy-to-style hair extensions and accessories for effortless elegance every day.</p>
+            </div>
+
+            <!-- Shop Links -->
+            <div class="footer-column shop">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="hairextentions.html">Braided Ponytails</a></li>
+                    <li><a href="hairextentions.html">Boho Ponytails</a></li>
+                    <li><a href="hairextentions.html">French Curls</a></li>
+                    <li><a href="hairextentions.html">Bangs Clip-ins</a></li>
+                    <li><a href="hairextentions.html">Wigs & Accessories</a></li>
+                </ul>
+            </div>
+
+            <!-- Tutorials & Guides -->
+            <div class="footer-column tutorials">
+                <h4>Tutorials & Guides</h4>
+                <ul>
+                    <li><a href="Tutorial.html">Style Tutorials</a></li>
+                    <li><a href="Accessories.html">Hair Care Tips</a></li>
+                    <li><a href="contact.html">FAQs</a></li>
+                </ul>
+            </div>
+
+            <!-- Connect / Newsletter -->
+            <div class="footer-column connect">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/knotandloop_ng?igsh=Nzlpenc2NWdzMWF1"><img src="icons/instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.tiktok.com/@knot_and_loop?_r=1&_t=ZS-93rNi85U0sU"><img src="icons/tiktok.svg" alt="TikTok"></a>
+                    <a href="https://www.instagram.com/yourpage"><img src="icons/youtube.svg" alt="YouTube"></a>
+                    <a href="https://pin.it/6Iu2ugBSF"><img src="icons/pinterest.svg" alt="Pinterest"></a>
+                </div>
+                <form class="newsletter" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <label for="email">Stay updated on new products & tutorials</label>
+                    <div class="newsletter-input">
+                        <input type="email" name="email" id="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Bottom row -->
+        <div class="footer-bottom">
+            <p>© 2026 Knot & Loop. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-and-conditions.html">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS - MUST BE AT THE BOTTOM -->
+    <script src="cart.js"></script>
+    <script>
+        // Hamburger Menu Toggle
+        console.log('Script loaded');
+
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.querySelector('.navbarcont');
+
+        console.log('Hamburger element:', hamburger);
+        console.log('Nav menu element:', navMenu);
+
+        // Create overlay element
+        const overlay = document.createElement('div');
+        overlay.classList.add('menu-overlay');
+        document.body.appendChild(overlay);
+
+        // Toggle menu on hamburger click
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('Hamburger clicked!');
+                
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                overlay.classList.toggle('active');
+                
+                console.log('Nav menu classes:', navMenu.classList);
+                
+                // Prevent body scroll when menu is open
+                document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+            });
+        } else {
+            console.error('Hamburger or navMenu not found!');
+            if (!hamburger) console.error('Hamburger button not found');
+            if (!navMenu) console.error('Navigation menu not found');
+        }
+
+        // Close menu when clicking overlay
+        overlay.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close menu when clicking a nav link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Close menu on window resize to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 1200) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
+</html>
