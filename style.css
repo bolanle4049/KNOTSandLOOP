@@ -61,11 +61,14 @@ html {
     --color-yellow: #F5A80A;
     --color-outline: #5F63688C;
 }
-
+html, body {
+  overflow-x: hidden;
+}
 body {
     background-color: var(--color-background) !important;
     font-family: 'Roboto', sans-serif !important;
     padding-top: 64px;
+    
 }
 
 .container {
@@ -109,6 +112,7 @@ body {
     display: flex;
     list-style: none;
     gap: 26px;
+    
 }
 
 .navbarcont li a {
@@ -876,4 +880,21 @@ p {
     .newsletter-input button {
         width: 100%;
     }
+   
+
+  .nav-links {
+    display: none;      /* hide menu by default */
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+
+  .nav-links.active {
+    display: flex;      /* show when hamburger clicked */
+  }
+
 }
+
