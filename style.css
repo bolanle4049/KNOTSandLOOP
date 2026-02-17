@@ -848,19 +848,23 @@ p {
     }
 
     .collection_card {
-        min-width: 85%;
+        min-width: calc(100% - 20px);
         margin: 0 auto;
         padding: 20px;
     }
 
+    /* ✅ 1 card on small phones too */
+   
+    
     .carousel_btn {
         display: none;
     }
 
     /* ===== TUTORIALS ===== */
     .tutorial-card {
-        min-width: 85%;
+         min-width: calc(100% - 20px);
     }
+
 
     .tutorial-card video {
         height: 180px;
