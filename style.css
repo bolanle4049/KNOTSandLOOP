@@ -61,20 +61,22 @@ html {
     --color-yellow: #F5A80A;
     --color-outline: #5F63688C;
 }
+
 html, body {
-  overflow-x: hidden;
+    overflow-x: hidden;
 }
+
 body {
     background-color: var(--color-background) !important;
     font-family: 'Roboto', sans-serif !important;
     padding-top: 64px;
-    
 }
 
 .container {
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
     margin: auto;
+    overflow: hidden; /* ✅ prevents children from bleeding out */
 }
 
 /* ======nav bar====== */
@@ -112,7 +114,6 @@ body {
     display: flex;
     list-style: none;
     gap: 26px;
-    
 }
 
 .navbarcont li a {
@@ -196,8 +197,7 @@ body {
 }
 
 .hero-img {
-    
-  display: block;
+    display: block;
     width: 100%;
     height: 117%;
     object-fit: cover;
@@ -206,10 +206,10 @@ body {
     top: 0;
     left: 0;
     z-index: 0;
-    object-position: left top;
     background-position: center;
     background-repeat: no-repeat;
     transition: opacity 1.5s ease-in-out;
+    opacity: 0; /* ✅ all hidden by default */
 }
 
 .hero-img.active {
@@ -237,13 +237,11 @@ body {
 }
 
 .hero_content h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
     font-size: clamp(32px, 5vw, 56px);
+    margin-bottom: 10px;
 }
 
 .hero_content p {
-    font-size: 16px;
     margin-bottom: 25px;
     color: #dbd9d9;
     font-size: clamp(14px, 2vw, 18px);
@@ -276,7 +274,6 @@ body {
 .secondarybtn {
     border: 1px solid #4A3428;
     color: #4A3428;
-    transform: scale(1.05);
     padding: 12px 28px;
     font-size: 14px;
     text-decoration: none;
@@ -291,6 +288,9 @@ body {
     transform: scale(1.05);
 }
 
+/* ============================= */
+/* COLLECTIONS CAROUSEL          */
+/* ============================= */
 .collections {
     padding: 40px 15px;
     background-color: #F6F1EB;
@@ -299,47 +299,42 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 25px;
+    overflow: hidden; /* ✅ key fix */
+    width: 100%;
 }
 
 .collections_header {
     text-align: center;
     margin-bottom: 50px;
-    font-family: 'Roboto', sans-serif !important;
 }
 
 .collections_header h2 {
     font-size: 31px;
     margin-bottom: 10px;
-    font-family: 'Roboto', sans-serif !important;
     font-weight: bold;
 }
 
 .collections_header p {
     font-size: 18px;
     color: #616161;
+}
+
+h1, h3, span, p {
     font-family: 'Roboto', sans-serif !important;
 }
 
-h1 {
-    font-family: 'Roboto', sans-serif !important;
-}
-
-h3 {
-    font-family: 'Roboto', sans-serif !important;
-}
-
-span {
-    font-family: 'Roboto', sans-serif !important;
-}
-
-p {
-    font-family: 'Roboto', sans-serif !important;
-}
-
-.carousel_container {
-    max-width: 900px;
-    margin: 0 auto;
+/* ✅ Wrapper constrained to page width */
+.carousel_wrapper {
     position: relative;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 50px; /* room for the buttons */
+    box-sizing: border-box;
+}
+
+/* ✅ Container clips overflow so cards don't bleed out */
+.carousel_container {
     overflow: hidden;
     width: 100%;
 }
@@ -347,10 +342,12 @@ p {
 .carousel_track {
     display: flex;
     transition: transform 0.6s ease-in-out;
+    will-change: transform;
 }
 
+/* ✅ Cards use calc so they respond to the wrapper size */
 .collection_card {
-    min-width: 300px;
+    min-width: calc(33.333% - 20px); /* 3 visible on desktop */
     margin: 0 10px;
     background: white;
     border: 1px solid #E8D8C3;
@@ -361,31 +358,17 @@ p {
     flex-shrink: 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0);
     transition: transform 0.5s ease, box-shadow 0.5s ease;
+    box-sizing: border-box;
 }
 
 .collection_card.active {
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-.carousel_dots {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    gap: 8px;
-}
-
-.carousel_dot {
-    width: 12px;
-    height: 12px;
-    background: #ddd;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.carousel_dot.active {
-    background: #333;
+.collection_card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
 }
 
 .collection_card h3 {
@@ -408,23 +391,24 @@ p {
     line-height: 1.5;
 }
 
-.collection_card:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+.carousel_dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 8px;
 }
 
-.prev {
-    left: -20px;
+.carousel_dot {
+    width: 12px;
+    height: 12px;
+    background: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
-.next {
-    right: -20px;
-}
-
-.carousel_wrapper {
-    position: relative;
-    max-width: 900px;
-    margin: 0 auto;
+.carousel_dot.active {
+    background: #4A3428;
 }
 
 .carousel_btn {
@@ -436,7 +420,7 @@ p {
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    font-size: 24px;
+    font-size: 18px;
     cursor: pointer;
     z-index: 2;
     transition: background 0.3s;
@@ -446,28 +430,36 @@ p {
     background: #eee;
 }
 
+.carousel_btn.prev {
+    left: 0;
+}
+
+.carousel_btn.next {
+    right: 0;
+}
+
 .see-more {
     border: 1px solid #000;
     color: #000;
-    transform: scale(1.05);
     padding: 12px 28px;
     font-size: 14px;
     text-decoration: none;
     border-radius: 4px;
     transition: all 0.3s ease;
     width: 200px;
+    text-align: center;
 }
 
 .see_more {
     border: 1px solid #4A3428;
     color: #4A3428;
-    transform: scale(1.05);
     padding: 12px 28px;
     font-size: 14px;
     text-decoration: none;
     border-radius: 4px;
     transition: all 0.3s ease;
     background-color: transparent;
+    text-align: center;
 }
 
 .see_more a {
@@ -478,13 +470,12 @@ p {
 .see_more:hover {
     background-color: #4A3428;
     color: white;
-    transform: scale(1.05);
 }
 
-/* TUTORIALS */
+/* ============================= */
+/* TUTORIALS CAROUSEL            */
+/* ============================= */
 .tutorials {
-    margin: 0 auto;
-    padding: 50px 20px;
     padding: 40px 15px;
     background-color: white;
     font-family: 'Roboto', sans-serif !important;
@@ -492,17 +483,17 @@ p {
     flex-direction: column;
     align-items: center;
     gap: 25px;
+    overflow: hidden; /* ✅ key fix */
+    width: 100%;
 }
 
 .tutorials-header {
     text-align: center;
-    font-family: 'Roboto', sans-serif !important;
 }
 
 .tutorials-header h2 {
     font-size: 31px;
     margin-bottom: 10px;
-    font-family: 'Roboto', sans-serif !important;
     font-weight: bold;
 }
 
@@ -510,35 +501,39 @@ p {
     color: #555;
     font-size: 18px;
     margin-bottom: 40px;
-    font-family: 'Roboto', sans-serif !important;
 }
 
 .tutorial-carousel-wrapper {
     position: relative;
-    overflow: hidden;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 50px;
+    box-sizing: border-box;
 }
 
 .tutorial-carousel-container {
     overflow: hidden;
     width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
 }
 
 .tutorial-carousel-track {
     display: flex;
-    gap: 30px;
+    gap: 20px;
     transition: transform 0.5s ease;
+    will-change: transform;
 }
 
 .tutorial-card {
-    min-width: 320px;
+    min-width: calc(33.333% - 14px); /* 3 visible on desktop */
     flex-shrink: 0;
     background: #F6F1EB;
     padding: 25px;
     border-radius: 6px;
     text-align: center;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tutorial-card video {
@@ -575,7 +570,7 @@ p {
 }
 
 .tutorial-card:hover {
-    transform: translateY(-10px) scale(1.05);
+    transform: translateY(-8px) scale(1.03);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
@@ -588,19 +583,34 @@ p {
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    font-size: 24px;
+    font-size: 18px;
     cursor: pointer;
     z-index: 2;
+    transition: background 0.3s;
 }
 
-/* FOOTER */
+.tutorial-btn:hover {
+    background: #eee;
+}
+
+.tutorial-btn.prev {
+    left: 0;
+}
+
+.tutorial-btn.next {
+    right: 0;
+}
+
+/* ============================= */
+/* FOOTER                        */
+/* ============================= */
 .footer {
     background: linear-gradient(180deg, #111, #222);
     color: #f5f5dc;
     padding: 60px 20px 20px;
     font-family: 'Arial', sans-serif;
     width: 100%;
-    margin-top: 120px;
+    margin-top: 60px;
 }
 
 .footer-container {
@@ -646,7 +656,6 @@ p {
 
 .footer-column ul li a:hover {
     color: #ffcc99;
-    transform: translateX(3px);
 }
 
 .social-icons {
@@ -712,12 +721,11 @@ p {
 .footer-bottom a {
     color: #ddd;
     text-decoration: none;
-    transition: color 0.3s, transform 0.3s;
+    transition: color 0.3s;
 }
 
 .footer-bottom a:hover {
     color: #ffcc99;
-    transform: translateY(-2px);
 }
 
 /* Overlay when menu is open */
@@ -737,7 +745,7 @@ p {
 }
 
 /* ============================= */
-/* RESPONSIVE - TABLET & MOBILE */
+/* RESPONSIVE - TABLET & MOBILE  */
 /* ============================= */
 @media screen and (max-width: 1200px) {
     body {
@@ -761,13 +769,11 @@ p {
         flex: 1;
     }
 
-    /* Show hamburger on mobile */
     .hamburger {
         display: flex !important;
         order: 3;
     }
 
-    /* Hide navigation by default on mobile */
     .navbarcont {
         display: none !important;
         position: fixed;
@@ -785,7 +791,6 @@ p {
         z-index: 1000;
     }
 
-    /* Show navigation when active */
     .navbarcont.active {
         display: flex !important;
         right: 0 !important;
@@ -816,7 +821,6 @@ p {
     .hero_content {
         text-align: center;
         padding: 0 20px;
-        padding-top: 0;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -836,35 +840,47 @@ p {
     .secondarybtn {
         width: 90%;
         text-align: center;
+        display: inline-block;
+        margin: 5px auto;
     }
 
     /* ===== COLLECTIONS ===== */
+    .carousel_wrapper {
+        padding: 0 10px; /* less padding on mobile, hide buttons */
+    }
+
+    .carousel_btn {
+        display: none; /* hide arrows, use swipe instead */
+    }
+
+    /* ✅ 1 card visible on mobile */
+    .collection_card {
+        min-width: 100%;
+        margin: 0;
+    }
+
     .collections_header h2 {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     .collections_header p {
         font-size: 15px;
     }
 
-    .collection_card {
-        min-width: calc(100% - 20px);
-        margin: 0 auto;
-        padding: 20px;
+    /* ===== TUTORIALS ===== */
+    .tutorial-carousel-wrapper {
+        padding: 0 10px;
     }
 
-    /* ✅ 1 card on small phones too */
-   
-    
-    .carousel_btn {
+    .tutorial-btn {
         display: none;
     }
 
-    /* ===== TUTORIALS ===== */
+    /* ✅ 1 card visible on mobile */
     .tutorial-card {
-         min-width: calc(100% - 20px);
+        min-width: 100%;
+        margin: 0;
     }
-
 
     .tutorial-card video {
         height: 180px;
@@ -873,6 +889,7 @@ p {
     /* ===== FOOTER ===== */
     .footer {
         padding: 40px 20px;
+        margin-top: 40px;
     }
 
     .footer-column {
@@ -886,21 +903,31 @@ p {
     .newsletter-input button {
         width: 100%;
     }
-   
-
-  .nav-links {
-    display: none;      /* hide menu by default */
-    flex-direction: column;
-    width: 100%;
-    background: white;
-    position: absolute;
-    top: 60px;
-    left: 0;
-  }
-
-  .nav-links.active {
-    display: flex;      /* show when hamburger clicked */
-  }
-
 }
 
+@media screen and (max-width: 768px) {
+    /* ✅ stack hero buttons vertically */
+    .herobutton {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 0;
+    }
+
+    .primarybtn,
+    .secondarybtn {
+        width: 200px;
+    }
+
+    /* ✅ 1 card on small phones too */
+    .collection_card {
+        min-width: 100%;
+        margin: 0;
+    }
+
+    .tutorial-card {
+        min-width: 100%;
+        margin: 0;
+    }
+}
