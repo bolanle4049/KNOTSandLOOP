@@ -221,27 +221,28 @@ body {
 }
 
 .hero-btn:hover {
-    background: #fff;
-    color: #222;
+    background:#4A3428 ;
+    color: white;
     transform: translateY(-3px);
 }
 
 .hero-btn1 {
     display: inline-block;
     padding: 0.8rem 2rem;
-    border: 1px solid #1F1F1F;
+    
     border-radius: 5px;
     text-decoration: none;
-    color: #1F1F1F;
+    color: white;
     background-color: transparent;
     font-weight: 600;
     transition: all 0.3s ease;
     font-family: 'Roboto', sans-serif !important;
     margin: 0 5px;
+     background: #4A3428;
 }
 
 .hero-btn1:hover {
-    background: #4A3428;
+    background: #C8A27E;
     color: white;
     transform: translateY(-3px);
 }
@@ -255,7 +256,7 @@ body {
 .tutorials-section h2 {
     text-align: center;
     margin-bottom: 2.5rem;
-    font-size: 29px;
+    font-size: 24px;
     font-family: 'Roboto', sans-serif !important;
     font-weight: bold;
 }
@@ -324,6 +325,26 @@ body {
     text-align: center;
     margin-top: 3rem;
 }
+.back-btn{
+text-decoration: none;dir
+color: white;
+background-color:#C8A27E;
+transition: all 0.3s ease;
+width: 150px;
+border-radius: 6px;
+font-size: 15px;
+font-weight: bold;
+padding: 8px;
+
+
+}
+.back-btn:hover{
+    background-color:#4A3428;
+     font-family: 'Roboto', sans-serif !important;
+    
+}
+    
+
 
 /* ======== FOOTER ======== */
 .footer {
@@ -528,16 +549,16 @@ body {
     }
 
     .hero-content h1 {
-        font-size: 28px;
+        font-size: 32px;
     }
 
     .hero-content p {
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .hero-btn,
     .hero-btn1 {
-        font-size: 12px;
+        font-size: 17px;
         padding: 10px 20px;
     }
 

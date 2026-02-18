@@ -138,6 +138,19 @@ body {
     font-family: 'Roboto', sans-serif !important;
     color: #4A3428;
 }
+.back-btn{
+text-decoration: none;
+color: white;
+background-color:#C8A27E;
+height: 50px;
+width: 150px;
+border-radius: 6px;
+font-size: 15px;
+font-weight: bold;
+padding: 10px;
+margin-left: 50px;
+
+}
 
 .nav-link.active {
     color: #C8A27E !important;
