@@ -162,11 +162,18 @@ body {
 .about-hero {
     position: relative;
     height: 60vh;
-    background: url("images/about-hero.jpg") center/cover no-repeat;
+    
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    
+}
+.about-hero img{
+    
+}
+.story-text img{
+height: 60vh;
 }
 
 .hero-overlay {
@@ -185,6 +192,21 @@ body {
     text-align: center;
     color: #fff;
     padding: 1.5rem 2rem;
+}
+.hero-content img{
+    display: block;
+    width: 100%;
+    height: 117%;
+    object-fit: cover;
+    object-position: left center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity 1.5s ease-in-out;
+    opacity: 0; /* ✅ all hidden by default */
 }
 
 .hero-content h1 {

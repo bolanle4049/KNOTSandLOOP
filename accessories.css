@@ -536,7 +536,8 @@ body {
     }
 
     .logo img {
-        width: 40px;
+        width: 35px;
+        height: 35px;
     }
 
     .knot {
@@ -665,8 +666,15 @@ body {
 
 /* Small mobile devices */
 @media (max-width: 425px) {
+    /* ✅ Keep logo visible but make it smaller */
+    .logo img {
+        width: 32px;
+        height: 32px;
+    }
+    
     .logo a {
-        display: none;
+        font-size: 14px !important;
+        letter-spacing: 1px;
     }
 
     .hero-content h1 {
