@@ -425,6 +425,11 @@ body {
     .logo img {
         width: 40px;
     }
+    .logo a {
+        font-size: 24px !important;
+        letter-spacing: 1px;
+    }
+
 
     .knot {
         font-size: 18px;
@@ -526,7 +531,8 @@ body {
 /* Small mobile devices */
 @media (max-width: 425px) {
     .logo a {
-        display: none;
+        font-size: 24px !important;
+        letter-spacing: 1px;
     }
 
     .contact-hero h1 {
