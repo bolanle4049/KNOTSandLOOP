@@ -228,7 +228,7 @@ body {
     display: inline-block;
     border-radius: 6px;
     width: 200px;
-    color: #2a2929;
+    color: white;
     padding: 15px;
     background: #C8A27E;
     border: none;
@@ -370,7 +370,118 @@ body {
     color: #ffcc99;
     transform: translateY(-2px);
 }
+/* ======== DELIVERY ZONE ADDITIONS ======== */
+#delivery-zone {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 5px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  background-color: #fff;
+  cursor: pointer;
+  appearance: auto;
+}
 
+#delivery-zone:focus {
+  border-color: #C8A27E;
+  outline: none;
+}
+
+.field-error {
+  color: #d9534f;
+  font-size: 13px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+.delivery-note {
+  font-size: 12.5px;
+  color: #888;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+#delivery-fee-line {
+  color: #8b5e3c;
+  font-size: 14px;
+}
+/* ======== FORM LABELS ======== */
+.checkout-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #333;
+}
+
+/* ======== ZONE DROPDOWN ======== */
+#delivery-zone {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 5px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  background-color: #fff;
+  cursor: pointer;
+  color: #333;
+  appearance: auto;
+}
+
+#delivery-zone:focus {
+  border-color: #C8A27E;
+  outline: none;
+}
+
+/* ======== ERROR & NOTE ======== */
+.field-error {
+  color: #d9534f;
+  font-size: 13px;
+  margin-top: 2px;
+  margin-bottom: 10px;
+}
+
+.delivery-note {
+  font-size: 12.5px;
+  color: #999;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+/* ======== ORDER SUMMARY LINES ======== */
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #444;
+}
+
+.delivery-fee-line {
+  color: #8b5e3c;
+}
+
+.total-line {
+  font-weight: 700;
+  font-size: 16px;
+  color: #222;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  margin-top: 6px;
+}
+.page-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  color: #222;
+  margin: 30px auto 10px;
+  letter-spacing: 1px;
+}
 /* ======================================== */
 /* RESPONSIVE STYLES */
 /* ======================================== */

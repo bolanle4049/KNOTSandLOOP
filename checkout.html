@@ -14,7 +14,7 @@
         <nav id="navbar" class="container_nav">
                 <div class="knot">
                     <div class="logo" id="">
-                        <img src="image/favicon.ico.png" alt="">
+                        <img src="image/freepik__elegant_circular_monogram_logo_icon_using_the.png" alt="">
                         <a class="navbar-brand" href="" id="logo">KNOT & LOOP</a>
                     </div>
                 </div>
@@ -41,28 +41,51 @@
 
         </nav>
     </header>
-<header><h1>Checkout<h1></header>
+<header><h1 class="page-title">Checkout<h1></header>
 <section class="checkout-container">
 
-    <div class="checkout-form">
+  <div class="checkout-form">
     <input type="text" id="name" placeholder="Full Name">
     <input type="tel" id="phone" placeholder="Phone Number">
-    
-    <h3>Delivery Option</h3>
-    <label><input type="radio" name="delivery" value="Delivery" checked> Home Delivery</label>
-    <label><input type="radio" name="delivery" value="Pickup"> Pickup</label>
 
-    <textarea id="address" placeholder="Delivery Address"></textarea>
+    <label for="delivery-zone">Select Delivery Zone (Abuja Only) <span style="color:red;">*</span></label>
+    <select id="delivery-zone" onchange="updateDeliveryFee()">
+      <option value="" data-fee="0">-- Select a zone --</option>
+      <option value="Garki" data-fee="1500">Garki</option>
+      <option value="Wuse" data-fee="1500">Wuse</option>
+      <option value="Maitama" data-fee="1500">Maitama</option>
+      <option value="Asokoro" data-fee="1500">Asokoro</option>
+      <option value="CBD" data-fee="1500">Central Business District (CBD)</option>
+      <option value="Jabi" data-fee="1700">Jabi</option>
+      <option value="Gwarinpa" data-fee="1700">Gwarinpa</option>
+      <option value="Kado" data-fee="1800">Kado</option>
+      <option value="Life Camp" data-fee="1800">Life Camp</option>
+      <option value="Apo" data-fee="2000">Apo</option>
+      <option value="Kubwa" data-fee="2000">Kubwa</option>
+      <option value="Lugbe" data-fee="2000">Lugbe</option>
+      <option value="Nyanya" data-fee="2200">Nyanya</option>
+      <option value="Karu" data-fee="2500">Karu</option>
+    </select>
+    <p id="zone-error" class="field-error" style="display:none;">Please select a delivery zone.</p>
+
+    <label for="exact-address">Exact Delivery Address <span style="color:red;">*</span></label>
+    <textarea id="exact-address" placeholder="House number, street, area, landmark" rows="3"></textarea>
+    <p id="address-error" class="field-error" style="display:none;">Please enter your delivery address.</p>
+    <p class="delivery-note">🛵 Delivery within Abuja is handled via dispatch riders.</p>
 
     <button onclick="placeOrder()">Place Order</button>
-    </div>
+  </div>
 
-    <div class="order-summary">
+  <div class="order-summary">
     <h3>Order Summary</h3>
     <div id="order-items"></div>
-    <p>Total: ₦<span id="order-total">0</span></p>
-    </div>
-    <a  class="back-btn"  href="cart.html" >← Return to Cart</a>
+    <p class="summary-line">Subtotal: ₦<span id="order-subtotal">0</span></p>
+    <p class="summary-line delivery-fee-line" id="delivery-fee-line" style="display:none;">Delivery Fee: ₦<span id="order-delivery-fee">0</span></p>
+    <p class="summary-line total-line">Total: ₦<span id="order-total">0</span></p>
+  </div>
+
+  <a class="back-btn" href="cart.html">← Return to Cart</a>
+
 </section>
 <footer class="footer">
     <div class="footer-container">
@@ -99,10 +122,10 @@
         <div class="footer-column connect">
         <h4>Connect</h4>
         <div class="social-icons">
-            <a href="#"><img src="icons/instagram.svg" alt="Instagram"></a>
-            <a href="#"><img src="icons/tiktok.svg" alt="TikTok"></a>
-            <a href="#"><img src="icons/youtube.svg" alt="YouTube"></a>
-            <a href="#"><img src="icons/pinterest.svg" alt="Pinterest"></a>
+           <a href="https://www.instagram.com/knotandloop_ng?igsh=Nzlpenc2NWdzMWF1"><img src="image/instagram.jfif" alt="Instagram"></a>
+        <a href="https://www.tiktok.com/@knot_and_loop?_r=1&_t=ZS-93rNi85U0sU"><img src="image/tiktok.png" alt="TikTok"></a>
+        <a href="https://www.instagram.com/yourpage"><img src="image/you.png" alt="YouTube"></a>
+        <a href="Check out my Pinterest profile! https://pin.it/6Iu2ugBSF"><img src="image/pintrest.avif" alt="Pinterest"></a>
         </div>
         <form class="newsletter">
             <label for="email">Stay updated on new products & tutorials</label>
